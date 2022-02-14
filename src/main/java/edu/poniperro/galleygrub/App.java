@@ -1,6 +1,7 @@
 package edu.poniperro.galleygrub;
 
 import edu.poniperro.galleygrub.items.Item;
+import edu.poniperro.galleygrub.order.Order;
 
 /**
  * 
@@ -56,8 +57,15 @@ public class App
          * Crea la comanda.
          */
 
+        Order order = new Order();
 
+        order.addItem("Krabby Patty", 1.25);
+        order.addItem("Coral Bits", 1.00);
+        order.addItem("Kelp Rings", 1.50);
+        order.addItem("Golden Loaf", 2.00);
+        order.addItem("Seafom Soda", 1.00);
 
+        order.display();
     }
 
     public static void display(Item item) {
