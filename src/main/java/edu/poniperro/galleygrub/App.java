@@ -1,6 +1,6 @@
 package edu.poniperro.galleygrub;
 
-import edu.poniperro.galleygrub.Items.Item;
+import edu.poniperro.galleygrub.items.Item;
 
 /**
  * 
@@ -25,7 +25,8 @@ public class App
     {
 
         /**
-         * Crea los items y printa sus datos.
+         * Crea los items del menu 
+         * y printa sus datos.
          * 
          * Krabby Patty
          * Coral Bits
@@ -34,16 +35,26 @@ public class App
          * Seafom Soda
          */
 
-        Item item = new Item("Krabby Patty", 1.25);
-        display(item);
-        item = new Item("Coral Bits", 1.00);
-        display(item);
-        item = new Item("Kelp Rings", 1.50);
-        display(item);
-        item = new Item("Golden Loaf", 2.00);
-        display(item);
-        item = new Item("Seafom Soda", 1.00);
-        display(item);
+        Item patty = new Item("Krabby Patty", 1.25);
+        display(patty);
+        Item bits = new Item("Coral Bits", 1.00);
+        display(bits);
+        Item rings = new Item("Kelp Rings", 1.50);
+        display(rings);
+        Item loaf = new Item("Golden Loaf", 2.00);
+        display(loaf);
+        Item soda = new Item("Seafom Soda", 1.00);
+        display(soda);
+
+        /**
+         * Bubble Bass llega al restaurante
+         * y hace un pedido muy simple.
+         * Quiere todo lo que hay en el menu
+         * en su tamaño estandar y sin 
+         * condimentos extras.
+         * 
+         * Crea la comanda.
+         */
 
 
 
