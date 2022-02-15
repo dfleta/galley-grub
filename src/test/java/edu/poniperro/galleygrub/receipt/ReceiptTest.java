@@ -31,7 +31,6 @@ public class ReceiptTest {
         order.addItem("Coral Bits", 1.00, "large");
 
         receipt = new Receipt(order);
-
     }
 
     @Test

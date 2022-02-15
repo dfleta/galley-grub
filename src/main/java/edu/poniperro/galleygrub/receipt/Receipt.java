@@ -55,8 +55,8 @@ public class Receipt {
     }
 
     public void print() {
-        this.order.display();
-        System.out.print("\tTOTAL --------> " + this.total + "$\n");
+        this.getOrder().display();
+        System.out.print("\tTOTAL --------> " + String.format("%.2f", this.total) + "$\n");
     }
     
 }

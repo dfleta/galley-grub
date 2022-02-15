@@ -153,8 +153,8 @@ public class App
         Receipt receiptExtra = new Receipt(order);
         receiptExtra.setChain(cheese);
 
-        receipt.total();
-        receipt.print();
+        receiptExtra.total();
+        receiptExtra.print();
     }
 
     public static void display(Item item) {
