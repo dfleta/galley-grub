@@ -10,6 +10,7 @@ import edu.poniperro.galleygrub.items.ItemFactory;
 public class Order {
     
     private final List<Item> items = new ArrayList<Item>();
+    private Double total = 0d; 
 
     public Order() {};
 
@@ -19,12 +20,26 @@ public class Order {
         this.items.add(item);      
     }
 
+    public void addItem(String name, double price, String extra) {
+        
+        Item item = ItemFactory.getItem(name, price, extra); 
+        this.items.add(item);
+    }
+
     public int size() {
         return this.items.size();
     }
 
     public List<Item> itemList() {
         return Collections.unmodifiableList(this.items);
+    }
+
+    public Double getTotal() {
+        return this.total;
+    }
+
+    public void updateTotal(Double total) {
+        this.total += total; 
     }
 
     public void display() {

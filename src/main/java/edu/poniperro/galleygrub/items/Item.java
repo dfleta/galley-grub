@@ -12,7 +12,7 @@ public class Item {
     }
 
     public Item(String name, double price, String extra) {
-        this.name = name;
+        this.name = name + " w/ " + extra;
         this.price = price;
         this.extra = extra;
     }
@@ -25,11 +25,13 @@ public class Item {
         return this.price;
     }
 
+    public String extra() {
+        return this.extra;
+    }
+
     @Override
     public String toString() {
-        return this.extra.isEmpty()? 
-            this.name + "...." + String.format("%.2f", this.price) + "$": 
-            this.name + " w/ " + this.extra + "...." + String.format("%.2f", this.price) + "$";
+        return this.name + "...." + String.format("%.2f", this.price) + "$";
     }
     
     @Override

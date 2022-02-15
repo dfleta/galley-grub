@@ -13,6 +13,12 @@ public class ItemFactory {
         return itemMap.get(name);
     }
 
+    public static Item getItem(String name, double price, String extra) {
+        
+        itemMap.putIfAbsent(name + " w/ " + extra, new Item(name, price, extra));
+        return itemMap.get(name + " w/ " + extra);
+    }
+
     public static int size() {
         return itemMap.size();
     }

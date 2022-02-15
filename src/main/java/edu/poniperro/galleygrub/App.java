@@ -1,9 +1,9 @@
 package edu.poniperro.galleygrub;
 
-import edu.poniperro.galleygrub.discounts.Extra;
-import edu.poniperro.galleygrub.discounts.ExtraDiscount;
-import edu.poniperro.galleygrub.discounts.SauceExtra;
-import edu.poniperro.galleygrub.discounts.SizeExtra;
+import edu.poniperro.galleygrub.extras.CheeseExtra;
+import edu.poniperro.galleygrub.extras.Extra;
+import edu.poniperro.galleygrub.extras.SauceExtra;
+import edu.poniperro.galleygrub.extras.SizeLargeExtra;
 import edu.poniperro.galleygrub.items.Item;
 import edu.poniperro.galleygrub.order.Order;
 import edu.poniperro.galleygrub.receipt.Receipt;
@@ -39,7 +39,7 @@ public class App
          * Coral Bits
          * Kelp Rings
          * Golden Loaf
-         * Seafom Soda
+         * Seafoam Soda
          */
 
         System.out.print("\t --- GALLEY GRUB ---  \n");
@@ -52,7 +52,7 @@ public class App
         display(rings);
         Item loaf = new Item("Golden Loaf", 2.00);
         display(loaf);
-        Item soda = new Item("Seafom Soda", 1.00);
+        Item soda = new Item("Seafoam Soda", 1.00);
         display(soda);
 
         /**
@@ -74,7 +74,7 @@ public class App
         order.addItem("Coral Bits", 1.00);
         order.addItem("Kelp Rings", 1.50);
         order.addItem("Golden Loaf", 2.00);
-        order.addItem("Seafom Soda", 1.00);
+        order.addItem("Seafoam Soda", 1.00);
 
         order.display();
 
@@ -93,8 +93,13 @@ public class App
          * de beneficio extra y decide cargar
          * por los extras.
          * 
-         * Adapta el tip Item para incluir 
-         * los extras.
+         * Adapta el tipo Item para incluir los extras.
+         * 
+         * Refactoriza el toString() de Item
+         * para mostrar el ingrediente extra.
+         * 
+         * NO ACTUALICES EL PRECIO DEL ITEM
+         * con el cargo extra.
          */
 
         System.out.print("\n\t --- GALLEY GRUB ---  \n");
@@ -102,27 +107,54 @@ public class App
         patty = new Item("Krabby Patty", 1.25, "cheese");
         display(patty);
 
-        bits = new Item("Coral Bits", 1.00, "small");
+        bits = new Item("Coral Bits", 1.00, "medium");
         display(bits);
         rings = new Item("Kelp Rings", 1.50, "sauce");
         display(rings);
         loaf = new Item("Golden Loaf", 2.00, "sauce");
         display(loaf);
-        soda = new Item("Seafom Soda", 1.00, "small");
+        soda = new Item("Seafoam Soda", 1.00, "small");
         display(soda);
-        
 
         /**
-         * Extras
+         * Buble Fish sigue zampando
+         * y realiza una comanda cargada
+         * de extras.
          */
 
-        Extra extra = new ExtraDiscount("cheese");
+        order = new Order();
+
+        order.addItem("Krabby Patty", 1.25, "cheese");
+        order.addItem("Coral Bits", 1.00, "medium");
+        order.addItem("Kelp Rings", 1.50, "sauce");
+        order.addItem("Golden Loaf", 2.00, "sauce");
+        order.addItem("Seafoam Soda", 1.00, "large");
+        order.addItem("Coral Bits", 1.00, "large");
+
+        order.display();
+
+        /**
+         * Define el importe a cargar por cada extra.
+         * 
+         * Configura los tipos de Extras:
+         *  - extra Cheese +0.25
+         *  - extra sauce +0.50
+         *  - size medium +0.25
+         *  - size large +0.50
+         */
+
+        Extra cheese = new CheeseExtra();
         Extra sauce = new SauceExtra();
-        Extra size = new SizeExtra();
+        Extra size = new SizeLargeExtra();
 
-        extra.setNextDiscount(sauce);
-        sauce.setNextDiscount(size);
+        cheese.setNextExtra(sauce);
+        sauce.setNextExtra(size);
 
+        Receipt receiptExtra = new Receipt(order);
+        receiptExtra.setChain(cheese);
+
+        receipt.total();
+        receipt.print();
     }
 
     public static void display(Item item) {
