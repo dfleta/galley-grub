@@ -1,4 +1,4 @@
-package edu.poniperro.galleygrub.order;
+package edu.poniperro.galleygrub.items;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -6,7 +6,6 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.poniperro.galleygrub.items.Item;
 
 /**
  * Implementar singleton

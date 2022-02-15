@@ -1,9 +1,11 @@
 package edu.poniperro.galleygrub.order;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import edu.poniperro.galleygrub.items.Item;
+import edu.poniperro.galleygrub.items.ItemFactory;
 
 public class Order {
     
@@ -21,9 +23,13 @@ public class Order {
         return this.items.size();
     }
 
+    public List<Item> itemList() {
+        return Collections.unmodifiableList(this.items);
+    }
+
     public void display() {
         System.out.print("\n\t --- ORDER --- \n");
-        items.stream().forEach(this::itemDisplay);
+        itemList().stream().forEach(this::itemDisplay);
     }
 
     private void itemDisplay(Item item) {

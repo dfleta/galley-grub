@@ -14,6 +14,10 @@ public class Item {
         return this.name;
     }
 
+    public Double price() {
+        return this.price;
+    }
+
     @Override
     public String toString() {
         return this.name + " " + String.format("%.2f", this.price) + "$";

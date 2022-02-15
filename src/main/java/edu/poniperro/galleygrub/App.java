@@ -1,18 +1,24 @@
 package edu.poniperro.galleygrub;
 
+import edu.poniperro.galleygrub.discounts.Extra;
+import edu.poniperro.galleygrub.discounts.ExtraDiscount;
+import edu.poniperro.galleygrub.discounts.SauceExtra;
+import edu.poniperro.galleygrub.discounts.SizeExtra;
 import edu.poniperro.galleygrub.items.Item;
 import edu.poniperro.galleygrub.order.Order;
+import edu.poniperro.galleygrub.receipt.Receipt;
 
 /**
  * 
- * Bib Esponja trabaja como cocinero en el Krusty Krab, 
- * restaurante famoso for su hamburguesa Krabby Patty.
+ * Bob Esponja trabaja como cocinero en el Krusty Krab, 
+ * restaurante famoso por su hamburguesa de autor
+ * Krabby Patty.
  * El restaurante tiene un menu llamado Galley Grub
  * que puedes leer aquí:
  * https://spongebob.fandom.com/wiki/Galley_Grub
  * 
- * Las comandas son anotadas a mano por Squidward Tentacles,
- * pero el propierario Eugene H. Krabs -un agarrao-
+ * Las comandas son anotadas a mano por Squidward Tentacles.
+ * El propierario Eugene H. Krabs -un agarrao-
  * en vez de adquirir un TPV ha decidido contratar
  * a un estudiante de Dual para que programar un software
  * para calcular el importe total del pedido e imprimir el recibo.
@@ -36,6 +42,8 @@ public class App
          * Seafom Soda
          */
 
+        System.out.print("\t --- GALLEY GRUB ---  \n");
+        
         Item patty = new Item("Krabby Patty", 1.25);
         display(patty);
         Item bits = new Item("Coral Bits", 1.00);
@@ -49,12 +57,15 @@ public class App
 
         /**
          * Bubble Bass llega al restaurante
-         * y hace un pedido muy simple.
+         * y hace una comanda muy simple.
          * Quiere todo lo que hay en el menu
          * en su tamaño estandar y sin 
          * condimentos extras.
          * 
-         * Crea la comanda.
+         * Squidward Tentacles crea la comanda
+         * y la muestra en la pantalla para que
+         * el cliente le de el visto bueno
+         * antes de generar el recibo con la factura.
          */
 
         Order order = new Order();
@@ -66,6 +77,32 @@ public class App
         order.addItem("Seafom Soda", 1.00);
 
         order.display();
+
+        /**
+         * Squidward Tentacles calcula el
+         * importe total de la comanda
+         * y lo muestra en pantalla.
+         */
+
+        Receipt receipt = new Receipt(order);
+        receipt.total();
+        receipt.print();
+
+        /**
+         * Eugene H. Krabs quiere obtener un margen
+         * de beneficio extra y decide ahora cargar
+         * por los extras.
+         * 
+         * Extras
+         */
+
+        Extra extra = new ExtraDiscount("cheese");
+        Extra sauce = new SauceExtra();
+        Extra size = new SizeExtra();
+
+        extra.setNextDiscount(sauce);
+        sauce.setNextDiscount(size);
+
     }
 
     public static void display(Item item) {

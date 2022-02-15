@@ -1,9 +1,7 @@
-package edu.poniperro.galleygrub.order;
+package edu.poniperro.galleygrub.items;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import edu.poniperro.galleygrub.items.Item;
 
 public class ItemFactory {
 
