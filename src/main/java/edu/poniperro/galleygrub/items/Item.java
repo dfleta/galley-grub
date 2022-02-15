@@ -3,11 +3,18 @@ package edu.poniperro.galleygrub.items;
 public class Item {
 
     String name = "";
-    Double price = 0d; 
+    Double price = 0d;
+    String extra = "";
 
     public Item(String name, double price) {
         this.name = name;
         this.price = price;
+    }
+
+    public Item(String name, double price, String extra) {
+        this.name = name;
+        this.price = price;
+        this.extra = extra;
     }
 
     public String name() {
@@ -20,7 +27,9 @@ public class Item {
 
     @Override
     public String toString() {
-        return this.name + " " + String.format("%.2f", this.price) + "$";
+        return this.extra.isEmpty()? 
+            this.name + "...." + String.format("%.2f", this.price) + "$": 
+            this.name + " w/ " + this.extra + "...." + String.format("%.2f", this.price) + "$";
     }
     
     @Override

@@ -90,9 +90,29 @@ public class App
 
         /**
          * Eugene H. Krabs quiere obtener un margen
-         * de beneficio extra y decide ahora cargar
+         * de beneficio extra y decide cargar
          * por los extras.
          * 
+         * Adapta el tip Item para incluir 
+         * los extras.
+         */
+
+        System.out.print("\n\t --- GALLEY GRUB ---  \n");
+
+        patty = new Item("Krabby Patty", 1.25, "cheese");
+        display(patty);
+
+        bits = new Item("Coral Bits", 1.00, "small");
+        display(bits);
+        rings = new Item("Kelp Rings", 1.50, "sauce");
+        display(rings);
+        loaf = new Item("Golden Loaf", 2.00, "sauce");
+        display(loaf);
+        soda = new Item("Seafom Soda", 1.00, "small");
+        display(soda);
+        
+
+        /**
          * Extras
          */
 

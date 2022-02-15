@@ -25,7 +25,7 @@ public class Receipt {
 
     public void print() {
         this.order.display();
-        System.out.print("\tTOTAL --> " + this.total + "\n");
+        System.out.print("\tTOTAL --------> " + this.total + "$\n");
     }
     
 }
