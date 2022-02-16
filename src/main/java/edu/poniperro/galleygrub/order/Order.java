@@ -8,21 +8,22 @@ import edu.poniperro.galleygrub.items.Item;
 import edu.poniperro.galleygrub.items.ItemFactory;
 
 public class Order {
-    
-    private final List<Item> items = new ArrayList<Item>();
-    private Double total = 0d; 
 
-    public Order() {};
+    private final List<Item> items = new ArrayList<Item>();
+    private Double total = 0d;
+
+    public Order() {
+    };
 
     public void addItem(String name, double price) {
 
-        Item item = ItemFactory.getItem(name, price); 
-        this.items.add(item);      
+        Item item = ItemFactory.getItem(name, price);
+        this.items.add(item);
     }
 
     public void addItem(String name, double price, String extra) {
-        
-        Item item = ItemFactory.getItem(name, price, extra); 
+
+        Item item = ItemFactory.getItem(name, price, extra);
         this.items.add(item);
     }
 
@@ -39,7 +40,7 @@ public class Order {
     }
 
     public void updateTotal(Double total) {
-        this.total += total; 
+        this.total += total;
     }
 
     public void display() {

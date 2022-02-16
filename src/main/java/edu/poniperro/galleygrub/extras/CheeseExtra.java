@@ -18,7 +18,7 @@ public class CheeseExtra extends Extra {
                             .reduce(Double::sum);
 
         if (cheeseCharge.isPresent()) {
-            order.updateTotal(cheeseCharge.get());  
+            order.updateTotal(cheeseCharge.get());
         }
 
         if(this.nextExtra != null) {

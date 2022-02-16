@@ -6,7 +6,6 @@ import edu.poniperro.galleygrub.order.Order;
 
 public class SauceExtra extends Extra {
 
-
     private Double SAUCE_PRICE = 0.50d;
 
     public SauceExtra() {};

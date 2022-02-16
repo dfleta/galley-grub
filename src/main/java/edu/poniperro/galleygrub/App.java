@@ -94,7 +94,7 @@ public class App
          * de beneficio extra y decide cargar
          * por los extras.
          * 
-         * Adapta el tipo Item para incluir los extras.
+         * Modifica el tipo Item para incluir los extras.
          * 
          * Refactoriza el toString() de Item
          * para mostrar el ingrediente extra.
@@ -107,7 +107,6 @@ public class App
 
         patty = new Item("Krabby Patty", 1.25, "cheese");
         display(patty);
-
         bits = new Item("Coral Bits", 1.00, "medium");
         display(bits);
         rings = new Item("Kelp Rings", 1.50, "sauce");
