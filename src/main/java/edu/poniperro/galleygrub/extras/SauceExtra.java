@@ -26,5 +26,4 @@ public class SauceExtra extends Extra {
             this.nextExtra.sumExtras(order);
         }
     }
-    
 }

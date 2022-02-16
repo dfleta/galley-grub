@@ -1,9 +1,6 @@
 package edu.poniperro.galleygrub.receipt;
 
-import java.util.Optional;
-
 import edu.poniperro.galleygrub.extras.Extra;
-import edu.poniperro.galleygrub.items.Item;
 import edu.poniperro.galleygrub.order.Order;
 
 public class Receipt {
@@ -31,21 +28,10 @@ public class Receipt {
 
     public Double total() {
         if (this.total == 0d) {
-            this.sumRegularPrices();
             this.sumExtrasCharge();
             this.total = this.getOrder().getTotal();
         }
         return this.total;
-    }
-
-    private void sumRegularPrices() {
-        Optional<Double> sumRegularPrices = this.getOrder().itemList().stream()
-                                    .map(Item::price)
-                                    .reduce(Double::sum);
-                
-        if (sumRegularPrices.isPresent()) {
-            order.updateTotal(sumRegularPrices.get());  
-        }        
     }
 
     public void sumExtrasCharge() {
@@ -58,5 +44,4 @@ public class Receipt {
         this.getOrder().display();
         System.out.print("\tTOTAL --------> " + String.format("%.2f", this.total) + "$\n");
     }
-    
 }

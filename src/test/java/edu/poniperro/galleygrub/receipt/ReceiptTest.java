@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import edu.poniperro.galleygrub.extras.CheeseExtra;
 import edu.poniperro.galleygrub.extras.Extra;
+import edu.poniperro.galleygrub.extras.Regular;
 import edu.poniperro.galleygrub.extras.SauceExtra;
 import edu.poniperro.galleygrub.extras.SizeLargeExtra;
 import edu.poniperro.galleygrub.order.Order;
@@ -31,11 +32,6 @@ public class ReceiptTest {
         order.addItem("Coral Bits", 1.00, "large");
 
         receipt = new Receipt(order);
-    }
-
-    @Test
-    public void total_sin_extras_test() {
-        assertEquals(7.75d , receipt.total(), 0.1);
     }
 
     // integracion receipt con un Extra
@@ -80,10 +76,12 @@ public class ReceiptTest {
         Extra sauce = new SauceExtra();
         Extra size = new SizeLargeExtra();
 
+        Regular regular = new Regular();
+        regular.setNextExtra(cheese);
         cheese.setNextExtra(sauce);
         sauce.setNextExtra(size);
         
-        receipt.setChain(cheese);   
+        receipt.setChain(regular);   
         assertNotNull(receipt.getChain());
 
         assertEquals(10.0d , receipt.total(), 0.1);

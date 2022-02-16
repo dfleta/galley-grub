@@ -2,6 +2,7 @@ package edu.poniperro.galleygrub;
 
 import edu.poniperro.galleygrub.extras.CheeseExtra;
 import edu.poniperro.galleygrub.extras.Extra;
+import edu.poniperro.galleygrub.extras.Regular;
 import edu.poniperro.galleygrub.extras.SauceExtra;
 import edu.poniperro.galleygrub.extras.SizeLargeExtra;
 import edu.poniperro.galleygrub.items.Item;
@@ -79,8 +80,8 @@ public class App
         order.display();
 
         /**
-         * Squidward Tentacles calcula el
-         * importe total de la comanda
+         * Squidward Tentacles genera el recibo,
+         * la app calcula el importe total de la comanda
          * y lo muestra en pantalla.
          */
 
@@ -143,15 +144,23 @@ public class App
          *  - size large +0.50
          */
 
+        Extra regular = new Regular();
         Extra cheese = new CheeseExtra();
         Extra sauce = new SauceExtra();
         Extra size = new SizeLargeExtra();
 
+        regular.setNextExtra(cheese);
         cheese.setNextExtra(sauce);
         sauce.setNextExtra(size);
 
+        /**
+         * Squidward Tentacles genera el recibo,
+         * la app calcula el importe total de la comanda
+         * y lo muestra en pantalla.
+         */
+
         Receipt receiptExtra = new Receipt(order);
-        receiptExtra.setChain(cheese);
+        receiptExtra.setChain(regular);
 
         receiptExtra.total();
         receiptExtra.print();
