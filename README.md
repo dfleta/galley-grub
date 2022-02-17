@@ -27,21 +27,9 @@ https://www.youtube.com/watch?v=VlxSEEIwwNY&list=PL_181YA7nAlfR_0ro3l6Dh7ReB7AB7
 
 Intenta que la salida del programa por CLI sea lo más parecida posible a las imágenes que se proporcionan. Cada una de ellas se corresponde con una de las historias de usuario que se detallan en los epígrafes siguientes.
 
-!["Historias de usuario"](./salida_CLI/ui_01.png "sneaker info ASCII CLI")
+!["Historias de usuario"](./doc/salida_CLI/CLI_01.png "sneaker info ASCII CLI")
 
-!["Historias de usuario"](./salida_CLI/ui_02.png "all bids and asks CLI")
-
-!["Historias de usuario"](./salida_CLI/ui_03.png "sneaker max ask info CLI")
-
-!["Historias de usuario"](./salida_CLI/ui_04.png "sneaker min bid info CLI")
-
-!["Historias de usuario"](./salida_CLI/ui_05.png "All sales CLI")
-
-!["Historias de usuario"](./salida_CLI/ui_06.png "sneaker info last sale CLI")
-
-!["Historias de usuario"](./salida_CLI/ui_07.png "All sales, bids, min bid, max ask size 9.5 CLI")
-
-!["Historias de usuario"](./salida_CLI/ui_08.png "sneaker info size 9.5 CLI")
+!["Historias de usuario"](./doc/salida_CLI/CLI_02.png "all bids and asks CLI")
 
 
 ## Diagrama de clases UML / Arquitectura de la app.
@@ -58,7 +46,7 @@ Las historias de usuario están enunciadas en el script principal `Stockx.java`
 
 1. El usuario/a solicita la info del `sneaker` en todas las tallas (ultima `sale`, máxima `bid`, mínima `ask`, `name` y estilo o `style`)
 
-!["Historias de usuario"](./historias_de_usuaria_GUI/US_01.jpg "printar sneaker")
+!["Historias de usuario"](./doc/salida_CLI/Captura%20de%20pantalla%20de%202022-02-17%2013-35-42.png.jpg "printar sneaker")
 
 2. El usuario/a lista todas las bids de una sneaker para conocer cuál es la `minima bid`.
 

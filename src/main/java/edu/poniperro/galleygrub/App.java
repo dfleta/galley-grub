@@ -139,7 +139,8 @@ public class App
          * para mostrar el ingrediente extra.
          * 
          * NO ACTUALICES EL PRECIO DEL ITEM
-         * con el cargo extra.
+         * con el cargo extra 
+         * pues eso lo haremos con otro componente. 
          */
 
         System.out.print("\n\t --- GALLEY GRUB ---  \n");
@@ -183,12 +184,20 @@ public class App
          *  - extra sauce +0.50
          *  - size medium +0.25
          *  - size large +0.50
+         * 
+         * Sigue los casos test del paquete Extras
+         * para implementar 4 clases que se encargan
+         * de sumar el precio base de los Items
+         * y de los extras para calcular el precio
+         * total de Order (la comanda).
+         * 
+         * El precio total de la comanda se guarda en Order.
          */
 
-        Extra regular = new Regular();
-        Extra cheese = new CheeseExtra();
-        Extra sauce = new SauceExtra();
-        Extra size = new SizeLargeExtra();
+        Extra regular = new Regular(); // suma el precio base
+        Extra cheese = new CheeseExtra(); // suma el precio del extra cheese
+        Extra sauce = new SauceExtra(); // suma el precio de sauce
+        Extra size = new SizeLargeExtra(); // suma el precio del tamanho Large
 
         regular.setNextExtra(cheese);
         cheese.setNextExtra(sauce);
