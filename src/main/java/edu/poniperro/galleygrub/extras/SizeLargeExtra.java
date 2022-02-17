@@ -22,9 +22,8 @@ public class SizeLargeExtra extends Extra {
             order.updateTotal(sizeCharge.get());
         }
 
-        if (this.nextExtra != null) {
-            this.nextExtra.sumExtras(order);
-        }
+        this.nextExtra.ifPresent(chain -> chain.sumExtras(order));
+
     }
 
 }

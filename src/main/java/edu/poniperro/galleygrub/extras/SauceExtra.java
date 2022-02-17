@@ -21,8 +21,7 @@ public class SauceExtra extends Extra {
             order.updateTotal(sauceCharge.get());  
         }
 
-        if(this.nextExtra != null) {
-            this.nextExtra.sumExtras(order);
-        }
+        this.nextExtra.ifPresent(chain -> chain.sumExtras(order));
+
     }
 }

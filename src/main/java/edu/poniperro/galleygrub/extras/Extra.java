@@ -1,5 +1,7 @@
 package edu.poniperro.galleygrub.extras;
 
+import java.util.Optional;
+
 import edu.poniperro.galleygrub.order.Order;
 
 public abstract class Extra {
@@ -10,10 +12,10 @@ public abstract class Extra {
 
     String extraProduct = "";
 
-    Extra nextExtra;
+    Optional<Extra> nextExtra = Optional.ofNullable(null);
 
     public void setNextExtra(Extra nextExtra) {
-        this.nextExtra = nextExtra;
+        this.nextExtra = Optional.of(nextExtra);
     }  
     
     public abstract void sumExtras(Order order);

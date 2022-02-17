@@ -21,9 +21,8 @@ public class CheeseExtra extends Extra {
             order.updateTotal(cheeseCharge.get());
         }
 
-        if(this.nextExtra != null) {
-            this.nextExtra.sumExtras(order);
-        }
+        this.nextExtra.ifPresent(chain -> chain.sumExtras(order));
+
     }
     
 }

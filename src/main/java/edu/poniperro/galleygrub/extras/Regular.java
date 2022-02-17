@@ -19,8 +19,6 @@ public class Regular extends Extra {
             order.updateTotal(sumRegularPrices.get());  
         }
 
-        if(this.nextExtra != null) {
-            this.nextExtra.sumExtras(order);
-        }
+        this.nextExtra.ifPresent(chain -> chain.sumExtras(order));
     }
 }
