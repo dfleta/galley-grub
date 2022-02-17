@@ -2,6 +2,8 @@ package edu.poniperro.galleygrub.items;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -22,16 +24,17 @@ public class ItemFactoryTest {
     @Test
     public void get_absent_item_test() {
 
-        Item item = ItemFactory.getItem("Krabby Patty", 1.25);
-        assertNotNull(item);
+        Item kpatty = ItemFactory.getItem("Krabby Patty", 1.25);
+        assertNotNull(kpatty);
 
-        assertEquals("Krabby Patty....1,25$", item.toString());
+        assertEquals("Krabby Patty....1,25$", kpatty.toString());
         assertEquals(1, ItemFactory.size());
 
-        item = ItemFactory.getItem("Coral Bits", 1.00);
-        assertNotNull(item);
+        Item coral = ItemFactory.getItem("Coral Bits", 1.00);
+        assertNotNull(kpatty);
 
-        assertEquals("Coral Bits....1,00$", item.toString());
+        assertEquals("Coral Bits....1,00$", coral.toString());
+        assertNotSame(kpatty,coral);
         assertEquals(2, ItemFactory.size()); 
     }
 
@@ -44,8 +47,9 @@ public class ItemFactoryTest {
         assertEquals("Krabby Patty....1,25$", item.toString());
         assertEquals(1, ItemFactory.size());
 
-        ItemFactory.getItem("Krabby Patty", 1.25);
+        Item itemClon = ItemFactory.getItem("Krabby Patty", 1.25);
         assertEquals(1, ItemFactory.size());
+        assertTrue(item == itemClon);
     } 
 
     @Test
@@ -71,18 +75,20 @@ public class ItemFactoryTest {
         assertNotNull(item);
         assertEquals(1, ItemFactory.size());
 
-        item = ItemFactory.getItem("Krabby Patty", 1.25, "cheese");
+        Item itemClon = ItemFactory.getItem("Krabby Patty", 1.25, "cheese");
         assertEquals(1, ItemFactory.size());
+        assertTrue(item == itemClon);
     }
 
     @Test
     public void get_regular_extra_item_test() {
 
-        Item item = ItemFactory.getItem("Krabby Patty", 1.25, "cheese");
-        assertNotNull(item);
+        Item kpattywc = ItemFactory.getItem("Krabby Patty", 1.25, "cheese");
+        assertNotNull(kpattywc);
         assertEquals(1, ItemFactory.size());
 
-        item = ItemFactory.getItem("Krabby Patty", 1.25);
+        Item kpatty = ItemFactory.getItem("Krabby Patty", 1.25);
         assertEquals(2, ItemFactory.size());
+        assertNotSame(kpattywc,kpatty);
     }
 }
