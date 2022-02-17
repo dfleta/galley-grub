@@ -21,4 +21,9 @@ public class Prices {
     public static boolean contains(String item) {
         return prices.containsKey(item);
     }
+
+    public static void display() {
+        prices.entrySet().stream()
+                                .forEach(entry -> System.out.println("\t" + entry));
+    }
 }

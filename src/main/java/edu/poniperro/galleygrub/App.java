@@ -36,18 +36,22 @@ public class App
         /**
          * Crea un diccionario con los precios
          * de los extras.
-         * 
-         * Lee los precios de los items en la imagen 
-         * del menu proporcionada.
-         * 
+         *  
          *  Los precios de los extras son estos:
          *  - cheese +0.25
          *  - sauce +0.50
          *  - medium +0.25
          *  - large +0.50
+         * 
+         * Lee los precios de los items en la imagen 
+         * del menu proporcionada.
          */
 
         Prices.init_prices();
+
+        // formatea la salida de cada entrada del diccionario como prefieras
+        System.out.print("\n\t --- PRICES ---  \n");
+        Prices.display();
 
         /**
          * Crea los items del menu 
@@ -58,9 +62,13 @@ public class App
          * Kelp Rings
          * Golden Loaf
          * Seafoam Soda
+         * 
+         * Incluye los metodos sobrescritos
+         * equals y hascode para comparar objetos
+         * de tipo Item.
          */
 
-        System.out.print("\t --- GALLEY GRUB ---  \n");
+        System.out.print("\n\t --- GALLEY GRUB ---  \n");
         
         Item patty = new Item("Krabby Patty", 1.25);
         display(patty);
@@ -84,6 +92,20 @@ public class App
          * y la muestra en la pantalla para que
          * el cliente le de el visto bueno
          * antes de generar el recibo con la factura.
+         * 
+         * 
+         * OPCIONAL:
+         * Puesto que a lo largo del dia van a generarse muchos objetos
+         * siempre del mismo tipo, vamos a ahorrar memoria.
+         * 
+         * Implementa la clase ItemFactory siguiendo los casos test
+         * que se proporcionan.
+         * 
+         * ItemFactory crea el Item que le pides,
+         * lo guarda en un diccionario y lo devuelve.
+         * Cuando solicitas crear de nuevo ese Item 
+         * te devuelve la misma referencia al objeto que has creado antes,
+         * ahorrando asi memoria.
          */
 
         Order order = new Order();
@@ -113,7 +135,7 @@ public class App
          * 
          * Modifica el tipo Item para incluir los extras.
          * 
-         * Refactoriza el toString() de Item
+         * Refactoriza el metodo toString() de Item
          * para mostrar el ingrediente extra.
          * 
          * NO ACTUALICES EL PRECIO DEL ITEM
@@ -148,6 +170,8 @@ public class App
         order.addItem("Seafoam Soda", 1.00, "large");
         order.addItem("Coral Bits", 1.00, "large");
 
+        // Utiliza el diccionario Prices para incluir
+        // el precio de los extras en la salida por consola.
         order.display();
         
 
