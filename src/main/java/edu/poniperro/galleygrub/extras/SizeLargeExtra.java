@@ -2,7 +2,7 @@ package edu.poniperro.galleygrub.extras;
 
 import java.util.Optional;
 
-import edu.poniperro.galleygrub.order.Order;
+import edu.poniperro.galleygrub.order.Comanda;
 
 public class SizeLargeExtra extends Extra {
 
@@ -12,7 +12,7 @@ public class SizeLargeExtra extends Extra {
     };
 
     @Override
-    public void sumExtras(Order order) {
+    public void sumExtras(Comanda order) {
         Optional<Double> sizeCharge = order.itemList().stream()
                 .filter(item -> item.extra().equals(SIZE_LARGE))
                 .map(item -> SIZE_PRICE)

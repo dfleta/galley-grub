@@ -11,6 +11,7 @@ import edu.poniperro.galleygrub.extras.Extra;
 import edu.poniperro.galleygrub.extras.Regular;
 import edu.poniperro.galleygrub.extras.SauceExtra;
 import edu.poniperro.galleygrub.extras.SizeLargeExtra;
+import edu.poniperro.galleygrub.order.Comanda;
 import edu.poniperro.galleygrub.order.Order;
 
 public class ReceiptTest {
@@ -42,7 +43,7 @@ public class ReceiptTest {
         receipt.setChain(cheese);   
         assertNotNull(receipt.getChain());
 
-        Order savedOrder = receipt.getOrder();
+        Comanda savedOrder = receipt.getOrder();
         assertNotNull(savedOrder);
         assertEquals(0d, savedOrder.getTotal(), 0d);
 

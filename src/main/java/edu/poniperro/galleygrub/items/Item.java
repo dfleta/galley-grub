@@ -1,6 +1,6 @@
 package edu.poniperro.galleygrub.items;
 
-public class Item {
+public class Item implements Product {
 
     String name = "";
     Double price = 0d;

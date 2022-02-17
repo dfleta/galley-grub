@@ -2,7 +2,7 @@ package edu.poniperro.galleygrub.extras;
 
 import java.util.Optional;
 
-import edu.poniperro.galleygrub.order.Order;
+import edu.poniperro.galleygrub.order.Comanda;
 
 public class SauceExtra extends Extra {
 
@@ -11,7 +11,7 @@ public class SauceExtra extends Extra {
     public SauceExtra() {};
 
     @Override
-    public void sumExtras(Order order) {
+    public void sumExtras(Comanda order) {
         Optional<Double> sauceCharge = order.itemList().stream()
                             .filter(item -> item.extra().equals(SAUCE))
                             .map(item -> SAUCE_PRICE)

@@ -40,45 +40,6 @@ Si añades algún componente, dibújalo a mano alzada sobre el diagrama.
 !["Diagrama de clases UML"](./diagrama_clases_UML.png)
 
 
-## Historias de usuario /casos de uso
-
-Las historias de usuario están enunciadas en el script principal `Stockx.java`
-
-1. El usuario/a solicita la info del `sneaker` en todas las tallas (ultima `sale`, máxima `bid`, mínima `ask`, `name` y estilo o `style`)
-
-!["Historias de usuario"](./doc/salida_CLI/Captura%20de%20pantalla%20de%202022-02-17%2013-35-42.png.jpg "printar sneaker")
-
-2. El usuario/a lista todas las bids de una sneaker para conocer cuál es la `minima bid`.
-
-!["Historias de usuario"](./historias_de_usuaria_GUI/US_02.jpg "sneaker bids")
-
-3. El usuario/a lista todas las asks de una sneaker para conocer cuál es la `maxima ask`.
-
-!["Historias de usuario"](./historias_de_usuaria_GUI/US_03.jpg "sneaker asks")
-
-4. El usuario/a lista todas las `sales` de una sneaker para averiguar cuál es la última venta o `last sale`.
-
-!["Historias de usuario"](./historias_de_usuaria_GUI/US_04.jpg "sneaker sales")
-
-
-5. El usuario/a solicita la info del sneaker en todas las tallas (ultima venta, máxima bid, mínima ask, nombre y estilo) = Historia de usuario 1.
-
-6. El usuario/a lista la info del sneaker en una determinada talla o `size`.
-
-!["Historias de usuario"](./historias_de_usuaria_GUI/US_05.jpg "sneaker info size 9.5")
-
-7. El usuario/a lista todas las sales de una sneaker en una determinada talla o `size` para averiguar cuál es la última venta.
-
-!["Historias de usuario"](./historias_de_usuaria_GUI/US_06.jpg "sneaker sales")
-
-8. El usuario/a lista todas las bids de una sneaker en una determinada `size` para conocer cuál es la mínima bid.
-
-!["Historias de usuario"](./historias_de_usuaria_GUI/US_07.jpg "sneaker bids")
-
-9. El usuario/a lista todas las asks de una sneaker en un determinada `size` para conocer cuál es la máxima ask.
-
-!["Historias de usuario"](./historias_de_usuaria_GUI/US_08.jpg "sneaker asks")
-
 ## Prepara el proyecto
 
  1. Crea un nuevo repo PRIVADO en tu cuenta en **Github** y compártelo con el usuario dfleta.

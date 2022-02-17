@@ -1,20 +1,20 @@
 package edu.poniperro.galleygrub.receipt;
 
 import edu.poniperro.galleygrub.extras.Extra;
-import edu.poniperro.galleygrub.order.Order;
+import edu.poniperro.galleygrub.order.Comanda;
 
-public class Receipt {
+public class Receipt implements Ticket {
 
-    private Order order = null;
+    private Comanda order = null;
     private Double total = 0d;
     private Extra firstExtra = null;
 
-    public Receipt(Order order) {
+    public Receipt(Comanda order) {
         this.order = order;
         this.total = order.getTotal();
     }
 
-    public Order getOrder() {
+    public Comanda getOrder() {
         return this.order;
     }
 

@@ -7,8 +7,11 @@ import edu.poniperro.galleygrub.extras.SauceExtra;
 import edu.poniperro.galleygrub.extras.SizeLargeExtra;
 import edu.poniperro.galleygrub.items.Item;
 import edu.poniperro.galleygrub.items.Prices;
+import edu.poniperro.galleygrub.items.Product;
+import edu.poniperro.galleygrub.order.Comanda;
 import edu.poniperro.galleygrub.order.Order;
 import edu.poniperro.galleygrub.receipt.Receipt;
+import edu.poniperro.galleygrub.receipt.Ticket;
 
 /**
  * 
@@ -70,15 +73,15 @@ public class App
 
         System.out.print("\n\t --- GALLEY GRUB ---  \n");
         
-        Item patty = new Item("Krabby Patty", 1.25);
+        Product patty = new Item("Krabby Patty", 1.25);
         display(patty);
-        Item bits = new Item("Coral Bits", 1.00);
+        Product bits = new Item("Coral Bits", 1.00);
         display(bits);
-        Item rings = new Item("Kelp Rings", 1.50);
+        Product rings = new Item("Kelp Rings", 1.50);
         display(rings);
-        Item loaf = new Item("Golden Loaf", 2.00);
+        Product loaf = new Item("Golden Loaf", 2.00);
         display(loaf);
-        Item soda = new Item("Seafoam Soda", 1.00);
+        Product soda = new Item("Seafoam Soda", 1.00);
         display(soda);
 
         /**
@@ -108,7 +111,7 @@ public class App
          * ahorrando asi memoria.
          */
 
-        Order order = new Order();
+        Comanda order = new Order();
 
         order.addItem("Krabby Patty", 1.25);
         order.addItem("Coral Bits", 1.00);
@@ -124,7 +127,7 @@ public class App
          * y lo muestra en pantalla.
          */
 
-        Receipt receipt = new Receipt(order);
+        Ticket receipt = new Receipt(order);
         receipt.total();
         receipt.print();
 
@@ -209,14 +212,16 @@ public class App
          * y lo muestra en pantalla.
          */
 
-        Receipt receiptExtra = new Receipt(order);
+        System.out.print("\n\t --- PRINTIG RECEIPT BIPBIPBIP ---  \n");
+
+        Ticket receiptExtra = new Receipt(order);
         receiptExtra.setChain(regular);
 
         receiptExtra.total();
         receiptExtra.print();
     }
 
-    public static void display(Item item) {
+    public static void display(Product item) {
         System.out.print("\t" + item.toString() + "\n");
     }
 }

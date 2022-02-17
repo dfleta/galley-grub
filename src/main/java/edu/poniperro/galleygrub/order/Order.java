@@ -7,7 +7,7 @@ import java.util.List;
 import edu.poniperro.galleygrub.items.Item;
 import edu.poniperro.galleygrub.items.ItemFactory;
 
-public class Order {
+public class Order implements Comanda {
 
     private final List<Item> items = new ArrayList<Item>();
     private Double total = 0d;
