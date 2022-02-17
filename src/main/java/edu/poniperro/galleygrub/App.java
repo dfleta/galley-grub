@@ -122,7 +122,7 @@ public class App
 
         patty = new Item("Krabby Patty", 1.25, "cheese");
         display(patty);
-        bits = new Item("Coral Bits", 1.00, "medium");
+        bits = new Item("Coral Bits", 1.00, "large");
         display(bits);
         rings = new Item("Kelp Rings", 1.50, "sauce");
         display(rings);
@@ -140,7 +140,7 @@ public class App
         order = new Order();
 
         order.addItem("Krabby Patty", 1.25, "cheese");
-        order.addItem("Coral Bits", 1.00, "medium");
+        order.addItem("Coral Bits", 1.00);
         order.addItem("Kelp Rings", 1.50, "sauce");
         order.addItem("Golden Loaf", 2.00, "sauce");
         order.addItem("Seafoam Soda", 1.00, "large");

@@ -25,7 +25,7 @@ public class ReceiptTest {
         order = new Order();
 
         order.addItem("Krabby Patty", 1.25, "cheese");
-        order.addItem("Coral Bits", 1.00, "medium");
+        order.addItem("Coral Bits", 1.00, "medium"); // si definir medium
         order.addItem("Kelp Rings", 1.50, "sauce");
         order.addItem("Golden Loaf", 2.00, "sauce");
         order.addItem("Seafoam Soda", 1.00, "large");
