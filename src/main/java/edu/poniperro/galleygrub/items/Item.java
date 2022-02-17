@@ -35,7 +35,9 @@ public class Item {
 
     @Override
     public String toString() {
-        return this.name + "...." + String.format("%.2f", this.price) + "$";
+        return Prices.contains(this.extra())? 
+        this.name + "...." + String.format("%.2f", this.price) + "$" + " + " + String.format("%.2f", Prices.getPrice(this.extra())) + "$":
+        this.name + "...." + String.format("%.2f", this.price) + "$";
     }
     
     @Override

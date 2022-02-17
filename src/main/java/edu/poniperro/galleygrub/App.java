@@ -6,6 +6,7 @@ import edu.poniperro.galleygrub.extras.Regular;
 import edu.poniperro.galleygrub.extras.SauceExtra;
 import edu.poniperro.galleygrub.extras.SizeLargeExtra;
 import edu.poniperro.galleygrub.items.Item;
+import edu.poniperro.galleygrub.items.Prices;
 import edu.poniperro.galleygrub.order.Order;
 import edu.poniperro.galleygrub.receipt.Receipt;
 
@@ -31,6 +32,20 @@ public class App
 {
     public static void main( String[] args )
     {
+        /**
+         * Crea un diccionario con los precios
+         * de los items del menu y de los extras.
+         * 
+         * Lee los precios de los items en la imagen 
+         * del menu proporcionada.
+         * 
+         *  Los precios de los extras som estos:
+         *  - cheese +0.25
+         *  - sauce +0.50
+         *  - medium +0.25
+         *  - large +0.50
+         */
+        Prices.init_prices();
 
         /**
          * Crea los items del menu 
@@ -113,7 +128,7 @@ public class App
         display(rings);
         loaf = new Item("Golden Loaf", 2.00, "sauce");
         display(loaf);
-        soda = new Item("Seafoam Soda", 1.00, "small");
+        soda = new Item("Seafoam Soda", 1.00, "large");
         display(soda);
 
         /**
