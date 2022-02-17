@@ -32,19 +32,21 @@ public class App
 {
     public static void main( String[] args )
     {
+
         /**
          * Crea un diccionario con los precios
-         * de los items del menu y de los extras.
+         * de los extras.
          * 
          * Lee los precios de los items en la imagen 
          * del menu proporcionada.
          * 
-         *  Los precios de los extras som estos:
+         *  Los precios de los extras son estos:
          *  - cheese +0.25
          *  - sauce +0.50
          *  - medium +0.25
          *  - large +0.50
          */
+
         Prices.init_prices();
 
         /**
@@ -122,7 +124,7 @@ public class App
 
         patty = new Item("Krabby Patty", 1.25, "cheese");
         display(patty);
-        bits = new Item("Coral Bits", 1.00, "large");
+        bits = new Item("Coral Bits", 1.00, "medium");
         display(bits);
         rings = new Item("Kelp Rings", 1.50, "sauce");
         display(rings);
@@ -147,6 +149,7 @@ public class App
         order.addItem("Coral Bits", 1.00, "large");
 
         order.display();
+        
 
         /**
          * Define el importe a cargar por cada extra.
