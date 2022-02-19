@@ -3,9 +3,19 @@ package edu.poniperro.galleygrub.items;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Un tipo Enum hubiese hecho el truco
+ * pero el dia del examen aun no sabian
+ * implementarlo.
+ * 
+ * Enum crea una instancia de esta clase
+ * y no permite nuevas instancias
+ * ni acceder a ella salvo a traves
+ * dela interfaz del tipo Enum
+ */
 public class Prices {
 
-    static Map<String, Double> prices = new HashMap<String, Double>();
+    static final Map<String, Double> prices = new HashMap<String, Double>();
 
     public static void init_prices() {
         prices.put("cheese", 0.25d);
@@ -14,11 +24,11 @@ public class Prices {
         prices.put("large", 0.50d);
     }
 
-    public static Double getPrice(String item) {
+    static Double getPrice(String item) {
         return prices.get(item);
     }  
     
-    public static boolean contains(String item) {
+    static boolean contains(String item) {
         return prices.containsKey(item);
     }
 
