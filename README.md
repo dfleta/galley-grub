@@ -1,5 +1,5 @@
-StockX ASCII
-============
+GALLEY GRUB
+===========
 
 Bob Esponja trabaja como cocinero en el Krusty Krab, restaurante famoso por su hamburguesa de autor Krabby Patty.
 
