@@ -19,11 +19,11 @@ public class ItemFactory {
         return itemMap.get(name + " w/ " + extra);
     }
 
-    public static int size() {
+    static int size() {
         return itemMap.size();
     }
 
-    public static void clear() {
+    static void clear() {
         itemMap.clear();
     }    
 }
