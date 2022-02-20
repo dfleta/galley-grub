@@ -12,6 +12,7 @@ public class CheeseExtra extends Extra {
 
     @Override
     public void sumExtras(Comanda order) {
+        
         Optional<Double> cheeseCharge = order.itemList().stream()
                             .filter(item -> item.extra().equals(CHEESE))
                             .map(item -> CHEESE_PRICE)

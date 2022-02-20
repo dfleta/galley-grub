@@ -35,8 +35,8 @@ public class Item implements Product {
 
     @Override
     public String toString() {
-        return Prices.contains(this.extra())? 
-        this.name + "...." + String.format("%.2f", this.price) + "$" + " + " + String.format("%.2f", Prices.getPrice(this.extra())) + "$":
+        return RetailPrice.contains(this.extra())? 
+        this.name + "...." + String.format("%.2f", this.price) + "$" + " + " + String.format("%.2f", RetailPrice.getPrice(this.extra())) + "$":
         this.name + "...." + String.format("%.2f", this.price) + "$";
     }
     

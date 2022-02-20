@@ -10,8 +10,6 @@ public abstract class Extra {
     static final String SAUCE = "sauce";
     static final String SIZE_LARGE = "large";
 
-    String extraProduct = "";
-
     Optional<Extra> nextExtra = Optional.ofNullable(null);
 
     public void setNextExtra(Extra nextExtra) {

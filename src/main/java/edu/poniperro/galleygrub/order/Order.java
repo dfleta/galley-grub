@@ -27,7 +27,7 @@ public class Order implements Comanda {
         this.items.add(item);
     }
 
-    public int size() {
+    int size() {
         return this.items.size();
     }
 

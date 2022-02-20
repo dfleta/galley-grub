@@ -12,6 +12,7 @@ public class SauceExtra extends Extra {
 
     @Override
     public void sumExtras(Comanda order) {
+        
         Optional<Double> sauceCharge = order.itemList().stream()
                             .filter(item -> item.extra().equals(SAUCE))
                             .map(item -> SAUCE_PRICE)
@@ -22,6 +23,5 @@ public class SauceExtra extends Extra {
         }
 
         this.nextExtra.ifPresent(chain -> chain.sumExtras(order));
-
     }
 }

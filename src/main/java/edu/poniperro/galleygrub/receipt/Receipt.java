@@ -5,7 +5,7 @@ import edu.poniperro.galleygrub.order.Comanda;
 
 public class Receipt implements Ticket {
 
-    private Comanda order = null;
+    private final Comanda order;
     private Double total = 0d;
     private Extra firstExtra = null;
 
@@ -22,7 +22,7 @@ public class Receipt implements Ticket {
         this.firstExtra = extra;
     }
 
-    public Extra getChain() {
+    Extra getChain() {
         return this.firstExtra;
     }
 
@@ -34,7 +34,7 @@ public class Receipt implements Ticket {
         return this.total;
     }
 
-    public void sumExtrasCharge() {
+    void sumExtrasCharge() {
         if (this.firstExtra != null) {
             this.firstExtra.sumExtras(this.order);
         }

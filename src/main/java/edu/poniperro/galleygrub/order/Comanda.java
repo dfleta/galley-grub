@@ -10,8 +10,6 @@ public interface Comanda {
 
     void addItem(String name, double price, String extra);
 
-    int size();
-
     List<Item> itemList();
 
     Double getTotal();

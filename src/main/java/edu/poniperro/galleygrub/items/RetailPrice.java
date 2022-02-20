@@ -13,9 +13,11 @@ import java.util.Map;
  * ni acceder a ella salvo a traves
  * dela interfaz del tipo Enum
  */
-public class Prices {
+public class RetailPrice {
 
     static final Map<String, Double> prices = new HashMap<String, Double>();
+
+    private RetailPrice() {};
 
     public static void init_prices() {
         prices.put("cheese", 0.25d);

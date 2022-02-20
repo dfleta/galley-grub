@@ -6,7 +6,7 @@ import edu.poniperro.galleygrub.extras.Regular;
 import edu.poniperro.galleygrub.extras.SauceExtra;
 import edu.poniperro.galleygrub.extras.SizeLargeExtra;
 import edu.poniperro.galleygrub.items.Item;
-import edu.poniperro.galleygrub.items.Prices;
+import edu.poniperro.galleygrub.items.RetailPrice;
 import edu.poniperro.galleygrub.items.Product;
 import edu.poniperro.galleygrub.order.Comanda;
 import edu.poniperro.galleygrub.order.Order;
@@ -50,11 +50,11 @@ public class App
          * del menu proporcionada.
          */
 
-        Prices.init_prices();
+        RetailPrice.init_prices();
 
         // formatea la salida de cada entrada del diccionario como prefieras
         System.out.print("\n\t --- PRICES ---  \n");
-        Prices.display();
+        RetailPrice.display();
 
         /**
          * Crea los items del menu 

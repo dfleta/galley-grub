@@ -11,6 +11,7 @@ public class Regular extends Extra {
 
     @Override
     public void sumExtras(Comanda order) {
+        
         Optional<Double> sumRegularPrices = order.itemList().stream()
                             .map(Item::price)
                             .reduce(Double::sum);
