@@ -6,10 +6,6 @@ import edu.poniperro.galleygrub.order.Comanda;
 
 public abstract class Extra {
 
-    static final String CHEESE = "cheese";
-    static final String SAUCE = "sauce";
-    static final String SIZE_LARGE = "large";
-
     Optional<Extra> nextExtra = Optional.ofNullable(null);
 
     public void setNextExtra(Extra nextExtra) {

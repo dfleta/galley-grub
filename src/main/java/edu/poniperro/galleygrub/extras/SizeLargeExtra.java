@@ -6,8 +6,6 @@ import edu.poniperro.galleygrub.order.Comanda;
 
 public class SizeLargeExtra extends Extra {
 
-    private Double SIZE_PRICE = 0.50d;
-
     public SizeLargeExtra() {
     };
 
@@ -15,8 +13,8 @@ public class SizeLargeExtra extends Extra {
     public void sumExtras(Comanda order) {
         
         Optional<Double> sizeCharge = order.itemList().stream()
-                .filter(item -> item.extra().equals(SIZE_LARGE))
-                .map(item -> SIZE_PRICE)
+                .filter(item -> item.extra().equalsIgnoreCase(Extras.LARGE.name()))
+                .map(item -> Extras.LARGE.getPrice())
                 .reduce(Double::sum);
 
         if (sizeCharge.isPresent()) {

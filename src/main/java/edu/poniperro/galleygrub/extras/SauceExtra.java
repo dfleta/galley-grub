@@ -6,16 +6,14 @@ import edu.poniperro.galleygrub.order.Comanda;
 
 public class SauceExtra extends Extra {
 
-    private Double SAUCE_PRICE = 0.50d;
-
     public SauceExtra() {};
 
     @Override
     public void sumExtras(Comanda order) {
         
         Optional<Double> sauceCharge = order.itemList().stream()
-                            .filter(item -> item.extra().equals(SAUCE))
-                            .map(item -> SAUCE_PRICE)
+                            .filter(item -> item.extra().equalsIgnoreCase(Extras.SAUCE.name()))
+                            .map(item -> Extras.SAUCE.getPrice())
                             .reduce(Double::sum);
 
         if (sauceCharge.isPresent()) {
