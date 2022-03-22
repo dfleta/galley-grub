@@ -11,7 +11,7 @@ import java.util.Map;
  * Enum crea una instancia de esta clase
  * y no permite nuevas instancias
  * ni acceder a ella salvo a traves
- * dela interfaz del tipo Enum
+ * de la interfaz del tipo Enum
  */
 public class RetailPrice {
 

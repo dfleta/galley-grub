@@ -6,16 +6,14 @@ import edu.poniperro.galleygrub.order.Comanda;
 
 public class CheeseExtra extends Extra {
 
-    private Double CHEESE_PRICE = 0.25d;
-
     public CheeseExtra() {};
 
     @Override
     public void sumExtras(Comanda order) {
         
         Optional<Double> cheeseCharge = order.itemList().stream()
-                            .filter(item -> item.extra().equals(CHEESE))
-                            .map(item -> CHEESE_PRICE)
+                            .filter(item -> item.extra().equalsIgnoreCase(Extras.CHEESE.name()))
+                            .map(item -> Extras.CHEESE.getPrice())
                             .reduce(Double::sum);
 
         if (cheeseCharge.isPresent()) {
